@@ -14,11 +14,17 @@ app.use(bodyParser.json());
 const db = require("./config/keys").mongoURI;
 //Connect to MONGODB
 
+/*
 mongoose
   .connect(db)
   .then(() => console.log("MONGODB connected"))
   .catch((err) => console.log(err));
+*/
+mongoose.connect(process.env.MONGODB_URI || db, { useNewUrlParser: true })
+        .then(connect => console.log('connected to mongodb..'))
+        .catch(e => console.log('could not connect to mongodb', e))
 
+module.exports = {mongoose}
 //Use Routes
 
 app.use("/api/Items", Items);
