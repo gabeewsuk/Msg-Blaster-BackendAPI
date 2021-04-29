@@ -1,0 +1,21 @@
+{
+  "name": "msg-blaster-backend",
+  "version": "1.0.0",
+  "description": "backend for msg-blaster",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Gabe Ewsuk",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^6.0.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
