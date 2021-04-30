@@ -27,9 +27,11 @@ const uri = "mongodb+srv://Grabes:CIZiBuePZEGuG44H@cluster0.dusdl.mongodb.net/my
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
+  console.log('connected')
+
   // perform actions on the collection object
   client.close();
-}).then(connect => console.log('connected to mongodb..')).catch((e => console.log('could not connect to mongodb', e)));
+})
 /*
 mongoose.connect(db, { useNewUrlParser: true })
         .then(connect => console.log('connected to mongodb..'))
