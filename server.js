@@ -22,7 +22,7 @@ mongoose
 */
 //mongoose.connect(process.env.MONGODB_URI || db, { useNewUrlParser: true })
 
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
+mongoose.connect(db, { useNewUrlParser: true })
         .then(connect => console.log('connected to mongodb..'))
         .catch(e => console.log('could not connect to mongodb', e))
 
