@@ -22,11 +22,22 @@ mongoose
 */
 //mongoose.connect(process.env.MONGODB_URI || db, { useNewUrlParser: true })
 
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://Grabes:CIZiBuePZEGuG44H@cluster0.dusdl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+}).then(connect => console.log('connected to mongodb..')).catch((e => console.log('could not connect to mongodb', e)));
+/*
 mongoose.connect(db, { useNewUrlParser: true })
         .then(connect => console.log('connected to mongodb..'))
         .catch(e => console.log('could not connect to mongodb', e))
-
 module.exports = {mongoose}
+*/
+
+module.exports = {client}
 //Use Routes
 
 app.use("/api/Items", Items);
