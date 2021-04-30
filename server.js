@@ -20,7 +20,9 @@ mongoose
   .then(() => console.log("MONGODB connected"))
   .catch((err) => console.log(err));
 */
-mongoose.connect(process.env.MONGODB_URI || db, { useNewUrlParser: true })
+//mongoose.connect(process.env.MONGODB_URI || db, { useNewUrlParser: true })
+
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
         .then(connect => console.log('connected to mongodb..'))
         .catch(e => console.log('could not connect to mongodb', e))
 
