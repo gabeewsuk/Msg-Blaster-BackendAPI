@@ -10,7 +10,7 @@ const Item = require("../../models/Items");
 // @description Get All Items
 // @access Public
 
-router.get("/", getData, (req, res) => {
+router.get("/", (req, res) => {
   Item.find()
     .sort({ date: 1 })
     .then((items) => res.json(items));
