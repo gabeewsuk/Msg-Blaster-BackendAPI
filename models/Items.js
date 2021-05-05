@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const ItemSchema = new Schema({
     userNames: {
         type: Array,
-        required:false
+        required:true
     },
     message: {
         type: String,
@@ -18,7 +18,7 @@ const ItemSchema = new Schema({
     },
     id: {
         type:Number,
-        required:true
+        required:false
     }
         
 });

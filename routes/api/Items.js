@@ -22,7 +22,10 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   const newItem = new Item({
-    name: req.body.name,
+    userNames: req.body.userNames,
+    message: req.body.message,
+    id: req.body.id
+
   });
   newItem.save().then((item) => res.json(item));
 });
