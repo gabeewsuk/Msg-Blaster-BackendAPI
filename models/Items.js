@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 //create schema
 const ItemSchema = new Schema({
-    day: {
-        type: Number,
+    userNames: {
+        type: Array,
         required:false
     },
-    task: {
+    message: {
         type: String,
         required:true
     },

@@ -5,13 +5,13 @@ const Items = require("./routes/api/Items");
 
 const app = express();
 
-//Bodyparser Middleware
+//Bodyparser Middleware  
 
 app.use(bodyParser.json());
 
 //DB COnfig
 
-const db = require("./config/keys").mongoURI;
+const db = require("./config/keys").process.env.MONGO_URI;
 //Connect to MONGODB
 
 /*
