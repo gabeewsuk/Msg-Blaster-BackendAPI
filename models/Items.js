@@ -18,7 +18,7 @@ const ItemSchema = new Schema({
     },
     id: {
         type:Number,
-        required:false
+        required:true
     }
         
 });
