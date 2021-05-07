@@ -4,7 +4,7 @@
   "description": "backend for msg-blaster",
   "main": "server.js",
   "scripts": {
-    "start": "npm server.js",
+    "start": "node server.js",
     "server": "nodemon server.js"
   },
   "author": "Gabe Ewsuk",
