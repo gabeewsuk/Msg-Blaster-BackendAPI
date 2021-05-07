@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 //DB COnfig
 //const db = require("./config/keys").process.env.MONGO_URI;
-
+app.use(cors())
 const db = require("./config/keys").mongoURI;
 //Connect to MONGODB
 
@@ -46,11 +46,21 @@ module.exports = {mongoose}
 
 app.use("/api/Items", Items);
 
-app.use(function(request, response, next) {
-  response.header("Access-Control-Allow-Origin", "*");
-  response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+app.use(function (req, res, next) {
+  console.log(req.method, req.path)
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept, authorization,x-access-token"
+  )
+  res.header(
+      "Access-Control-Allow-Methods",
+      "GET, POST, PATCH, OPTIONS, PUT, DELETE"
+  )
   next();
-});
+})
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
 
 /*
 app.use(

@@ -21,6 +21,7 @@ router.get("/", (req, res) => {
 // @access Public
 
 router.post("/", (req, res) => {
+  console.log("here we are")
   const newItem = new Item({
     userNames: req.body.userNames,
     message: req.body.message,
