@@ -45,7 +45,7 @@ module.exports = {mongoose}
 
 app.use("/api/Items", Items);
 app.use((req, res, next)=> {
-  res.header('Allow-Control-Allow-Origin', "http://localhost:3000/");
+  res.header('Allow-Control-Allow-Origin', "*");
   res.header('Allow-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   res.header('Allow-Control-Allow-Headers', 'Content-Type');
   next();
