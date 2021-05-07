@@ -44,14 +44,11 @@ module.exports = {mongoose}
 //Use Routes
 
 app.use("/api/Items", Items);
-app.use((req, res, next)=> {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Allow-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-  res.header('Allow-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+app.use(function(request, response, next) {
+  response.header("Access-Control-Allow-Origin", "*");
+  response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
-
-
-} )
+});
 
 const port = process.env.PORT || 5000;
 
