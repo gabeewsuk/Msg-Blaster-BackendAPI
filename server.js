@@ -45,13 +45,14 @@ module.exports = {mongoose}
 //Use Routes
 
 app.use("/api/Items", Items);
-/*
+
 app.use(function(request, response, next) {
   response.header("Access-Control-Allow-Origin", "*");
   response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-*/
+
+/*
 app.use(
   cors({
     allowedHeaders: ["authorization", "Content-Type"], // you can change the headers
@@ -60,7 +61,7 @@ app.use(
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     preflightContinue: false
   }));
-
+*/
 
 const port = process.env.PORT || 5000;
 
