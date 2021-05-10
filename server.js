@@ -1,8 +1,11 @@
 const express = require("express");
+//import mongoose from 'mongoose'
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const Items = require("./routes/api/Items");
+const items = require("./routes/api/items");
 const cors = require("cors");
+const tasks = require ("./routes/api/tasks")
+
 
 const app = express();
 
@@ -44,7 +47,8 @@ module.exports = {mongoose}
 //module.exports = {client}
 //Use Routes
 
-app.use("/api/Items", Items);
+app.use("/api/items", items);
+app.use("/api/tasks", tasks)
 
 app.use(function (req, res, next) {
   console.log(req.method, req.path)
